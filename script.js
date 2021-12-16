@@ -11,6 +11,7 @@ let row
 let cell
 let cellDimensions
 
+console.log(cellDimensions)
 // Table Creation
 
 function createTable(){
@@ -33,14 +34,21 @@ function createRows(){
 
 function createCell(){
     cell = document.createElement('div')
-    cell.style.height = (container.offsetWidth - (columns * 2)) / columns + "px"
-    cell.style.width = (container.offsetWidth - (columns * 2)) / columns + "px"
+    cell.style.height = dimensions();
+    cell.style.width = dimensions();
     cell.style.border = '1px solid black'
     cell.style.backgroundColor = 'white'
     cell.classList.add('cell')
     cells.push(cell); 
     return cell
 };
+
+// Cell Size
+
+function dimensions(){
+    cellDimensions = (650 - (columns * 2)) / columns + "px"
+    return cellDimensions;
+}
 
 // Cell Color
 
