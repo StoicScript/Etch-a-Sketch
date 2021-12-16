@@ -33,8 +33,8 @@ function createRows(){
 
 function createCell(){
     cell = document.createElement('div')
-    cell.style.height = (container.clientWidth - (columns * 2)) / columns + "px"
-    cell.style.width = (container.clientWidth - (columns * 2)) / columns + "px"
+    cell.style.height = (container.offsetWidth - (columns * 2)) / columns + "px"
+    cell.style.width = (container.offsetWidth - (columns * 2)) / columns + "px"
     cell.style.border = '1px solid black'
     cell.style.backgroundColor = 'white'
     cell.classList.add('cell')
