@@ -50,3 +50,8 @@ p{
 #clear-btn:hover{
     transform: scale(1.05)
 }
+
+#clear-btn:active{
+    box-shadow: none;
+    transform: translate(3px,5px)
+}
