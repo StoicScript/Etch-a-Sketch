@@ -8,7 +8,15 @@ h1{
     color: white;
     font-family: 'Electrolize', sans-serif;
     text-shadow: 2px 4px black;
+}
 
+h2{
+    font-family: 'Electrolize', sans-serif;
+}
+
+p{
+    font-size: 15px;
+    color: black;
 }
 
 .container{
@@ -17,15 +25,17 @@ h1{
     margin: auto;
     width: 650px;
     height: 650px;
-    border: 1px solid black
+    border: 40px solid rgb(0, 0, 0);
+    border-radius: 30px;
 }
 
-#reset-btn{
+#clear-btn{
     margin-top: 20px;
-    padding: 15px 40px;
+    padding: 7px 40px;
     font-family: 'Electrolize';
     font-size: 20px;
     border-radius: 10px;
     background-color: white;
     box-shadow: 3px 5px black;
 }
+
