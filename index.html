@@ -15,19 +15,24 @@
 <body>
     <h1>Etch-a-Sketch</h1>
 
+    <div class="tools">
+        <div class="size">
+        <h2>Grid Size Selector<h2>
+        <input id ='range' type="range" min="1" max="50" value='16'>
+        <p id='range-num'>0</p>
+        </div>
+        <div class="colors">
+            <h2>Color Selector<h2></h2>
+            <input type="color" id="color-picker" name="head" value="#87ceeb">
+        </div>
+    </div>
+
     <div class="container">
 
     </div>
 
-    <h2>Grid Size Selector<h2>
-    <p id='range-num'>0</p>
-    <input id ='range' type="range" min="1" max="50" value='16'>
-    <br>
-    <h2>Color Selector<h2></h2>
-    <input type="color" id="color-picker" name="head" value="#87ceeb">
-    <br>
-    <br>
-    <button id='clear-btn'>Clear</button>
+        <button id='clear-btn'>Clear</button>
+    </div>
 
 </body>
 
