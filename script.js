@@ -1,5 +1,9 @@
 const container = document.querySelector('.container')
-const reset = document.getElementById('reset-btn')
+const clear = document.getElementById('clear-btn')
+const range = document.getElementById('range')
+const rangeNum = document.getElementById("range-num").innerHTML = `${range.value} x ${range.value}`
+
+
 let columns = 16
 let cells = []
 let row 
@@ -43,9 +47,9 @@ function cellHoverColor(){
     })
 };
 
-function askForCells(){
-    columns = prompt('What dimensions you want guy?')
-};
+function resetColor(){
+    cells.forEach(cell => cell.style.backgroundColor = 'white');
+}
 
 function resetContainer(){
     while (container.firstChild) {
@@ -55,8 +59,31 @@ function resetContainer(){
     askForCells();
 }
 
-reset.addEventListener('click', () => {
-    cells.forEach(cell => cell.style.backgroundColor = 'white');
+function newSize(){
+    resetColor();
     resetContainer();
     createTable();
+}
+
+function askForCells(){
+    columns = range.value
+};
+
+function gridSizeText(val) {
+    document.getElementById("range-num").innerHTML = `${val} x ${val}`;
+}
+
+clear.addEventListener('click', () => {
+    resetColor();
 })
+
+range.addEventListener('input', (e) => {
+    myFunction(e.target.value)
+})
+
+range.addEventListener('input', (e) => {
+    gridSizeText(e.target.value)
+})
+
+range.addEventListener('change', newSize)
+
