@@ -17,6 +17,7 @@ h2{
 p{
     font-size: 15px;
     color: black;
+    margin-top: 0px;
 }
 
 .container{
@@ -25,12 +26,19 @@ p{
     margin: auto;
     width: 650px;
     height: 650px;
-    border: 40px solid rgb(0, 0, 0);
-    border-radius: 30px;
+    box-shadow: 10px 10px black;
+}
+
+.tools{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 20px;
+    margin-top: -20px;
 }
 
 #clear-btn{
-    margin-top: 20px;
+    margin-top: 50px;
     padding: 7px 40px;
     font-family: 'Electrolize';
     font-size: 20px;
@@ -39,3 +47,6 @@ p{
     box-shadow: 3px 5px black;
 }
 
+#clear-btn:hover{
+    transform: scale(1.05)
+}
