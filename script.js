@@ -29,7 +29,7 @@ function createCell(){
     cell.style.height = (container.clientWidth - (columns * 2)) / columns + "px"
     cell.style.width = (container.clientWidth - (columns * 2)) / columns + "px"
     cell.style.border = '1px solid black'
-    cell.style.backgroundColor = 'lightGrey'
+    cell.style.backgroundColor = 'white'
     cell.classList.add('cell')
     cells.push(cell); 
     return cell
@@ -38,13 +38,13 @@ function createCell(){
 function cellHoverColor(){
     cells.forEach(cell => {
         cell.addEventListener('mouseover', (e) => {
-            e.target.style.backgroundColor = 'blue'
+            e.target.style.backgroundColor = 'skyblue'
         })
     })
 };
 
 function askForCells(){
-    columns = prompt('How many you want guy?')
+    columns = prompt('What dimensions you want guy?')
 };
 
 function resetContainer(){
@@ -56,7 +56,7 @@ function resetContainer(){
 }
 
 reset.addEventListener('click', () => {
-    cells.forEach(cell => cell.style.backgroundColor = 'lightGrey');
+    cells.forEach(cell => cell.style.backgroundColor = 'white');
     resetContainer();
     createTable();
 })
