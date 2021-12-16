@@ -2,7 +2,7 @@ const container = document.querySelector('.container')
 const clear = document.getElementById('clear-btn')
 const range = document.getElementById('range')
 const rangeNum = document.getElementById("range-num").innerHTML = `${range.value} x ${range.value}`
-
+const colorSelection = document.getElementById('color-picker')
 
 let columns = 16
 let cells = []
@@ -42,7 +42,7 @@ function createCell(){
 function cellHoverColor(){
     cells.forEach(cell => {
         cell.addEventListener('mouseover', (e) => {
-            e.target.style.backgroundColor = 'skyblue'
+            e.target.style.backgroundColor = colorSelection.value
         })
     })
 };
@@ -75,10 +75,6 @@ function gridSizeText(val) {
 
 clear.addEventListener('click', () => {
     resetColor();
-})
-
-range.addEventListener('input', (e) => {
-    myFunction(e.target.value)
 })
 
 range.addEventListener('input', (e) => {
