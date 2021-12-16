@@ -1,21 +1,23 @@
 const container = document.querySelector('.container')
 const reset = document.getElementById('reset-btn')
+let columns = 16
+let cells = []
 let row 
 let cell
-let cells = []
-
-let columns = 16
-let rows = 16
+let cellDimensions
 
 function createTable(){
     for (let i = 0; i < columns; i++){
         createRows() 
     }
+    cellHoverColor()
 };
+
+createTable()
 
 function createRows(){
     row = document.createElement('div')
-    for (let i = 0; i < rows; i++){
+    for (let i = 0; i < columns; i++){
         row.appendChild(createCell());
         row.classList.add('row')
         container.appendChild(row)
@@ -24,26 +26,37 @@ function createRows(){
 
 function createCell(){
     cell = document.createElement('div')
-    cell.style.minHeight = '35px'
-    cell.style.minWidth = '35px'
-    cell.style.maxHeight = '70px'
-    cell.style.maxWidth = '70px'
+    cell.style.height = (container.clientWidth - (columns * 2)) / columns + "px"
+    cell.style.width = (container.clientWidth - (columns * 2)) / columns + "px"
     cell.style.border = '1px solid black'
-    cell.classList.add('cell')
     cell.style.backgroundColor = 'lightGrey'
-    cells.push(cell)
+    cell.classList.add('cell')
+    cells.push(cell); 
     return cell
 };
 
-createTable()
-
-cells.forEach(cell => {
-    cell.addEventListener('mouseover', (e) => {
-        e.target.style.backgroundColor = 'blue'
+function cellHoverColor(){
+    cells.forEach(cell => {
+        cell.addEventListener('mouseover', (e) => {
+            e.target.style.backgroundColor = 'blue'
+        })
     })
-})
+};
+
+function askForCells(){
+    columns = prompt('How many you want guy?')
+};
+
+function resetContainer(){
+    while (container.firstChild) {
+        container.firstChild.remove()
+    }
+    cells = [];
+    askForCells();
+}
 
 reset.addEventListener('click', () => {
-    cells.forEach(cell => cell.style.backgroundColor = 'lightGrey')
+    cells.forEach(cell => cell.style.backgroundColor = 'lightGrey');
+    resetContainer();
+    createTable();
 })
-
