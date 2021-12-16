@@ -27,6 +27,7 @@ p{
     max-width: 650px;
     max-height: 650px;
     box-shadow: 10px 10px black;
+    border: 1px solid black;
 }
 
 .tools{
